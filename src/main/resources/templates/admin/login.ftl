@@ -15,7 +15,7 @@
     <!-- 主题颜色样式 -->
     <link rel="stylesheet" href="${ctx}/static/admin/dist/css/skins/all-skins.min.css">
     <!-- iCheck -->
-    <link rel="stylesheet" href="${ctx}/static/admin/plugins/iCheck/square/blue.css">
+    <link rel="stylesheet" href="${ctx}/static/admin/plugins/iCheck/flat/red.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -74,13 +74,13 @@
 <!-- Bootstrap 3.3.6 -->
 <script src="${ctx}/static/admin/bootstrap/js/bootstrap.min.js"></script>
 <!-- iCheck -->
-<script src="${ctx}/static/admin/plugins/iCheck/icheck.min.js"></script>
+<script src="${ctx}/static/admin/plugins/iCheck/icheck.js"></script>
 <script>
-    $(function () {
+    $(document).ready(function(){
         $('input').iCheck({
-            checkboxClass: 'icheckbox_square-blue',
-            radioClass: 'iradio_square-blue',
-            increaseArea: '20%' // optional
+            checkboxClass: 'icheckbox_flat-red',
+            radioClass: 'iradio_flat-red',
+            increaseArea : '-15%'
         });
     });
 </script>
