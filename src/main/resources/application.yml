@@ -1,0 +1,9 @@
+server:
+  port: 8080
+  servlet:
+    #访问地址项目名
+    context-path: /
+spring:
+  profiles:
+    #开发时使用配置文件
+    active: dev
