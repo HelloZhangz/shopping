@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>管理登录</title>
+    <title>用户注册</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.6 -->
     <link rel="stylesheet" href="${ctx}/static/admin/bootstrap/css/bootstrap.min.css">
@@ -41,12 +41,16 @@
 <body class="hold-transition login-page" style="background-image: url('/static/admin/dist/img/login.jpg')">
 <div class="login-box">
     <div class="login-logo">
-        <a href="/admin/login"><span style="font-size: 20px;color: #00c0ef">后台管理员登录中心</span></a>
+        <a href="/admin/login"><span style="font-size: 20px;color: #00c0ef">后台用户注册中心</span></a>
     </div>
     <div class="login-box-body">
-        <p class="login-box-msg">登录</p>
+        <p class="login-box-msg">用户注册</p>
 
-        <form action="/admin/login" method="post">
+        <form action="${ctx}/static/admin" method="post">
+            <div class="form-group has-feedback">
+                <input type="text" class="form-control" name="nickName" placeholder="用户昵称">
+                <span class="glyphicon glyphicon-bookmark form-control-feedback"></span>
+            </div>
             <div class="form-group has-feedback">
                 <input type="text" class="form-control" name="userName" placeholder="用户名">
                 <span class="glyphicon glyphicon-user form-control-feedback"></span>
@@ -55,28 +59,27 @@
                 <input type="password" name="password" class="form-control" placeholder="密码">
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
             </div>
-            <div class="row">
-                <div class="col-xs-8">
-                    <div>
-                           <label style="font-weight: normal;cursor: pointer"> <input id="remember" type="checkbox">自动登录</label>
-                    </div>
-                </div>
-                <div class="col-xs-4 text-right">
-                    <a href="/admin/resetPwd">忘记密码</a><br>
-                </div>
+            <div class="form-group has-feedback">
+                <input type="password" class="form-control" name="passwords" placeholder="再次输入密码">
+                <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
+            </div>
+            <div class="form-group has-feedback">
+                <input type="email" class="form-control" name="email" placeholder="联系邮箱">
+                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+            </div>
+            <div class="form-group has-feedback">
+                <input type="text" class="form-control" name="mobile" placeholder="联系手机">
+                <span class="glyphicon glyphicon-phone form-control-feedback"></span>
             </div>
             <div class="row" style="margin: 10px 0;">
-                <button type="submit" class="btn btn-primary btn-block btn-flat">登录</button>
+                <button type="submit" class="btn btn-primary btn-block btn-flat">注册</button>
             </div>
 
         </form>
 
         <div class="row">
-            <div class="col-xs-6 text-left" >
-                <a href="#">快速登录</a><br>
-            </div>
-            <div class="col-xs-6 text-right">
-                <a href="/admin/register" class="text-center">注册帐号</a>
+            <div class="col-xs-12 text-center" >
+                <a href="/admin/login">已经有账号? 登录</a><br>
             </div>
         </div>
 

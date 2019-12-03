@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>管理登录</title>
+    <title>找回密码</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.6 -->
     <link rel="stylesheet" href="${ctx}/static/admin/bootstrap/css/bootstrap.min.css">
@@ -41,42 +41,30 @@
 <body class="hold-transition login-page" style="background-image: url('/static/admin/dist/img/login.jpg')">
 <div class="login-box">
     <div class="login-logo">
-        <a href="/admin/login"><span style="font-size: 20px;color: #00c0ef">后台管理员登录中心</span></a>
+        <a href="/admin/login"><span style="font-size: 20px;color: #00c0ef">后台管理员密码找回</span></a>
     </div>
     <div class="login-box-body">
-        <p class="login-box-msg">登录</p>
+        <form action="${ctx}/static/admin" method="post">
+            <div class="form-group has-feedback">
+                <input type="text" class="form-control" name="userName" placeholder="请输入邮箱或者手机号码">
+            </div>
 
-        <form action="/admin/login" method="post">
-            <div class="form-group has-feedback">
-                <input type="text" class="form-control" name="userName" placeholder="用户名">
-                <span class="glyphicon glyphicon-user form-control-feedback"></span>
-            </div>
-            <div class="form-group has-feedback">
-                <input type="password" name="password" class="form-control" placeholder="密码">
-                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-            </div>
             <div class="row">
-                <div class="col-xs-8">
-                    <div>
-                           <label style="font-weight: normal;cursor: pointer"> <input id="remember" type="checkbox">自动登录</label>
-                    </div>
+                <div class="col-xs-8 text-left" >
+                    <input type="text" class="form-control" name="num" placeholder="验证码">
                 </div>
-                <div class="col-xs-4 text-right">
-                    <a href="/admin/resetPwd">忘记密码</a><br>
+                <div class="col-xs-4 text-center"  style="padding-left: 0px;">
+                    <button class="btn btn-success btn-block btn-flat">获取验证码</button>
                 </div>
             </div>
             <div class="row" style="margin: 10px 0;">
-                <button type="submit" class="btn btn-primary btn-block btn-flat">登录</button>
+                <button type="submit" class="btn btn-primary btn-block btn-flat">确认重置</button>
             </div>
-
         </form>
 
         <div class="row">
-            <div class="col-xs-6 text-left" >
-                <a href="#">快速登录</a><br>
-            </div>
-            <div class="col-xs-6 text-right">
-                <a href="/admin/register" class="text-center">注册帐号</a>
+            <div class="col-xs-12 text-center" >
+                <a href="/admin/login">回到登录页面</a><br>
             </div>
         </div>
 
